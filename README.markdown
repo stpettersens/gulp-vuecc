@@ -1,4 +1,4 @@
-### gulp-codo
+### gulp-vuecc
 > Gulp plug-in for unofficial [Vue component compiler](https://github.com/stpettersens/vue-component-compiler).
 
 <!--
