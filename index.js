@@ -3,14 +3,38 @@ var gutil = require('gulp-util'),
   through = require('through2'),
     _exec = require('child_process').exec;
 
-
 function invokeVuecc(files, opts, cb) {
-	files.map(function(file) {
-		var ext = file.path.substr(-3);
-		var output = file.path.substr(0, file.path.length - 7) + ext;
-		_exec('vuecc ' + file.path + ' ' + output, function(err, stdout, stderr) {
-			console.log(stdout);
-		});
+    var iExt = files[0].path.substr(-7);
+    var oExt = files[0].path.substr(-3);
+    var options = ' ';
+    if(opts.hasOwnProperty('inputExt'))
+      iExt = opts.inputExt;
+
+    if(opts.hasOwnProperty('outputExt'))
+      oExt = opts.outputExt;
+
+    if(opts.hasOwnProperty('verbose') && !opts.verbose)
+      options += '--quiet ';
+
+    if(opts.hasOwnProperty('header') && !opts.header)
+      options += '--no-header ';
+
+    if(opts.hasOwnProperty('references') && Array.isArray(opts.references)) {
+      options += '[';
+      for(var i = 0; i < opts.references.length; i++) {
+        options += "'" + opts.references[i] + "'";
+        if(i < opts.references.length - 1) options += ',';
+      }
+      options += '] ';
+    }
+
+  	files.map(function(file) {
+  		var output = ' ' + file.path.substr(0, file.path.length - iExt.length) + oExt;
+      //console.log('vuecc ' + file.path + output + options);
+  		_exec('vuecc ' + file.path + output + options, function(err, stdout, stderr) {
+  			console.log(stdout);
+        if(stderr) console.log(stderr);
+  		});
 	});
 }
 
