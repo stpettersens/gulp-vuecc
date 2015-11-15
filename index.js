@@ -20,12 +20,13 @@ function invokeVuecc(files, opts, cb) {
       options += '--no-header ';
 
     if(opts.hasOwnProperty('references') && Array.isArray(opts.references)) {
-      options += '[';
+      options += '"[';
       for(var i = 0; i < opts.references.length; i++) {
-        options += "'" + opts.references[i] + "'";
-        if(i < opts.references.length - 1) options += ',';
+          options += "'" + opts.references[i] + "'";
+        if(i < opts.references.length - 1) 
+          options += ',';
       }
-      options += '] ';
+      options += ']" ';
     }
 
   	files.map(function(file) {
