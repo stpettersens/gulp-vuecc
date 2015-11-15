@@ -33,7 +33,7 @@ function invokeVuecc(files, opts, cb) {
   		var output = ' ' + file.path.substr(0, file.path.length - iExt.length) + oExt;
       //console.log('vuecc ' + file.path + output + options);
   		_exec('vuecc ' + file.path + output + options, function(err, stdout, stderr) {
-  			console.log(stdout);
+  			if(stdout.length > 1) console.log(stdout);
         if(stderr) console.log(stderr);
   		});
 	});
