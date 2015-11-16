@@ -1,5 +1,5 @@
 ### gulp-vuecc
-> Gulp plug-in for unofficial [Vue component compiler](https://github.com/stpettersens/vue-component-compiler).
+> :tropical_drink: Gulp plug-in for unofficial [Vue component compiler](https://github.com/stpettersens/vue-component-compiler).
 
 <!--
 [![Build Status](https://travis-ci.org/stpettersens/gulp-codo.png?branch=master)](https://travis-ci.org/stpettersens/gulp-codo)
