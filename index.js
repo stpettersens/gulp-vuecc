@@ -31,7 +31,6 @@ function invokeVuecc(files, opts, cb) {
 
   	files.map(function(file) {
   		var output = ' ' + file.path.substr(0, file.path.length - iExt.length) + oExt;
-      //console.log('vuecc ' + file.path + output + options);
   		_exec('vuecc ' + file.path + output + options, function(err, stdout, stderr) {
   			if(stdout.length > 1) console.log(stdout);
         if(stderr) console.log(stderr);
