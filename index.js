@@ -36,8 +36,8 @@ function invokeVuecc(files, opts, cb) {
       	if(stdout.length > 1) gutil.log(stdout);
         if(stderr) gutil.log(gutil.colors.red(stderr));
         cb(err);
-  		});
-	});
+      });
+    });
 }
 
 module.exports = function(options) {
