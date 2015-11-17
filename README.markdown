@@ -1,8 +1,6 @@
 ### gulp-vuecc
 > :tropical_drink: Gulp plug-in for unofficial [Vue component compiler](https://github.com/stpettersens/vue-component-compiler).
 
-_Using Grunt?_ :boar: [grunt-vuecc](http://github.com/stpettersens/grunt-vuecc)
-
 <!--
 [![Build Status](https://travis-ci.org/stpettersens/gulp-codo.png?branch=master)](https://travis-ci.org/stpettersens/gulp-codo)
 [![npm version](https://badge.fury.io/js/gulp-codo.svg)](http://npmjs.com/package/gulp-codo)
@@ -50,3 +48,5 @@ gulp.task('components', function() {
 ##### License
 
 [MIT](https://opensource.org/licenses/MIT)
+
+:boar: [grunt-vuecc](http://github.com/stpettersens/grunt-vuecc)
