@@ -22,11 +22,18 @@ Then:
 var gulp = require('gulp'),
    vuecc = require('gulp-vuecc');
 
-gulp.task('doc', function () {
+gulp.task('components', function() {
 	return gulp.src('*.vue.ts', {read: false})
-	.pipe(vuecc());
+	.pipe(vuecc({
+		header: true,
+		verbose: false,
+		inputExt: '.vue.ts',
+		outputExt: '.ctrl.js'
+	}));
 });
 ```
+
+_Using Grunt?_ :boar: [grunt-vuecc](http://github.com/stpettersens/grunt-vuecc)
 
 ##### Authors
 
