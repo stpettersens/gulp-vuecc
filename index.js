@@ -28,12 +28,14 @@ function invokeVuecc(files, opts, cb) {
       }
       options += ']" ';
     }
-    
+
+    var verbose = opts.verbose;
+
     files.map(function(file) {
       var output = ' ' + file.path.substr(0, file.path.length - iExt.length) + oExt;
       //gutil.log(gutil.colors.gray('vuecc ' + file.path + output + options));
       _exec('vuecc ' + file.path + output + options, function(err, stdout, stderr) {
-      	if(stdout.length > 1) gutil.log(stdout);
+      	if(stdout.length > 1 && verbose) gutil.log(stdout);
         if(stderr) gutil.log(gutil.colors.red(stderr));
         cb(err);
       });
