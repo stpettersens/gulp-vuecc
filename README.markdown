@@ -33,7 +33,7 @@ gulp.task('components', function() {
 });
 ```
 
-##### Options
+##### Options:
 
 * **options: Object** : Object containing any of the following options:
   * **header: boolean** : Generate commented header for output (default: *true*).
@@ -41,11 +41,11 @@ gulp.task('components', function() {
   * **inputExt: string** : File extension to use for input (default: *.vue.ts*).
   * **outputExt: string** : File extension to use for output (default: *.ts*).
 
-##### Authors
+##### Authors:
 
 * [Sam Saint-Pettersen](https://github.com/stpettersens)
 
-##### License
+##### License:
 
 [MIT](https://opensource.org/licenses/MIT)
 
