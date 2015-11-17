@@ -28,12 +28,14 @@ function invokeVuecc(files, opts, cb) {
       }
       options += ']" ';
     }
-
-  	files.map(function(file) {
-  		var output = ' ' + file.path.substr(0, file.path.length - iExt.length) + oExt;
+    
+    files.map(function(file) {
+      var output = ' ' + file.path.substr(0, file.path.length - iExt.length) + oExt;
+      //gutil.log(gutil.colors.gray('vuecc ' + file.path + output + options));
   		_exec('vuecc ' + file.path + output + options, function(err, stdout, stderr) {
-  			if(stdout.length > 1) console.log(stdout);
-        if(stderr) console.log(stderr);
+  			if(stdout.length > 1 && stdout.indexOf('--quiet') == -1) gutil.log(stdout);
+        if(stderr) gutil.log(gutil.colors.red(stderr));
+        cb(err);
   		});
 	});
 }
@@ -50,7 +52,7 @@ module.exports = function(options) {
   }, function (cb) {
     invokeVuecc(files, options, function(err) {
       if(err) {
-        cb(new gutil.PluginError('gulp-vuecc', err, {fileName: file.path}));
+        cb(new gutil.PluginError('gulp-vuecc', err, {fileName: files[0].path}));
         return;
       }
       cb(null);
