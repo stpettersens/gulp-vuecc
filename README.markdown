@@ -49,4 +49,6 @@ gulp.task('components', function() {
 
 [MIT](https://opensource.org/licenses/MIT)
 
+##### Using Grunt?
+
 :boar: [grunt-vuecc](http://github.com/stpettersens/grunt-vuecc)
