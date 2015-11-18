@@ -12,7 +12,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "gulp clean && gulp vuecc && gulp nodeunit"
   },
   "files": [
     "index.js"
@@ -30,6 +30,6 @@
   },
   "devDependencies": {
     "gulp": "^3.9.0",
-    "mocha": "*"
+    "gulp-nodeunit-runner": "^0.2.2"
   }
 }
