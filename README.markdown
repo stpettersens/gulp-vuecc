@@ -11,7 +11,7 @@
 
 First install [vuecc](https://github.com/stpettersens/vue-component-compiler) globally:
 
-	$ npm install -g vue-component-compiler
+	$ npm install -g vuecc-compiler
 
 Then:
 
