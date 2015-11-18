@@ -12,7 +12,6 @@ node_js:
 # * Install gulp.
 # * Install vue-component-compiler (vuecc-compiler package).
 before_install: 
-    - npm install -g gulp
     - npm install gulp
     - npm install -g vuecc-compiler
 
