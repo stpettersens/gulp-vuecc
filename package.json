@@ -1,6 +1,6 @@
 {
   "name": "gulp-vuecc",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Gulp plug-in for unoffical Vue component compiler.",
   "license": "MIT",
   "repository": "http://github.com/stpettersens/gulp-vuecc",
