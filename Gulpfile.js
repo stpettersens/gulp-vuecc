@@ -11,7 +11,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('vuecc', function() {
-	gulp.src('greeter.vue.ts')
+	gulp.src('greeter.vue.ts', {read: false})
 	.pipe(vuecc({
 		header: false,
 		verbose: false,
