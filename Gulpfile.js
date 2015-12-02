@@ -16,7 +16,8 @@ gulp.task('vuecc', function() {
 		header: false,
 		verbose: false,
 		inputExt: '.vue.ts',
-		outExt: '.ts'
+		outExt: '.ts',
+		type: 'ts'
 	}));
 });
 
