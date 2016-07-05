@@ -1,5 +1,6 @@
 node_modules/
 typings/
+*.tgz
 .travis.yml
 .gitignore
 .npmignore
