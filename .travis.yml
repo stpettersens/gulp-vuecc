@@ -4,16 +4,13 @@
 sudo: false
 language: node_js
 node_js:
-    - "iojs"
-    - "0.10"
-    - 0.11
+  - '0.6'
+  - '0.5'
 
 # Prerequisites:
 # * Install gulp.
-# * Install vue-component-compiler (vuecc-compiler package).
-before_install: 
-    - npm install gulp
-    - npm install -g vuecc-compiler
+before_install:
+  - npm install gulp
 
 # Invoke tests for gulp.
 script: npm test

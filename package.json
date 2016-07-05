@@ -27,7 +27,7 @@
   "dependencies": {
     "gulp-util": "^3.0.0",
     "through2": "^2.0.0",
-    "vuecc-compiler": "0.0.9"
+    "vuecc-compiler": "0.1.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
