@@ -7,10 +7,5 @@ node_js:
   - '6.2'
   - '5.1'
 
-# Prerequisites:
-# * Install gulp.
-before_install:
-  - npm install gulp
-
 # Invoke tests for gulp.
 script: npm test
