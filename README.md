@@ -2,6 +2,7 @@
 > :tropical_drink: Gulp plug-in for unofficial [Vue component compiler](https://github.com/stpettersens/vue-component-compiler).
 
 [![Build Status](https://travis-ci.org/stpettersens/gulp-vuecc.png?branch=master)](https://travis-ci.org/stpettersens/gulp-vuecc)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 [![npm version](https://badge.fury.io/js/gulp-vuecc.svg)](http://npmjs.com/package/gulp-vuecc)
 [![Dependency Status](https://david-dm.org/stpettersens/gulp-vuecc.png?theme=shields.io)](https://david-dm.org/stpettersens/gulp-vuecc) [![Development Dependency Status](https://david-dm.org/stpettersens/gulp-vuecc/dev-status.png?theme=shields.io)](https://david-dm.org/stpettersens/gulp-vuecc#info=devDependencies)
 
