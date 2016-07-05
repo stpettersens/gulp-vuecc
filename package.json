@@ -8,9 +8,6 @@
     "name": "Sam Saint-Pettersen",
     "email": "s.stpettersen+github@gmail.com"
   },
-  "engines": {
-    "node": ">=0.10.0"
-  },
   "scripts": {
     "test": "gulp test"
   },
