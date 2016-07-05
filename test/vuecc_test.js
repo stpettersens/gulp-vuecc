@@ -1,16 +1,12 @@
-'use strict';
+'use strict'
 
-var fs = require('fs');
+const fs = require('fs')
 
-exports.vuecc = function(test) {
-
-	test.expect(1);
-
-	var actual = fs.readFileSync('greeter.ts').toString();
-	var expected = fs.readFileSync('test/expected.ts').toString();
-	test.equal(actual, expected, 'should have created greeter.ts from greeter.vue.ts.');
-
-	console.log('Should have created greeter.ts from greeter.vue.ts.');
-	
-	test.done();
+exports.vuecc = function (test) {
+  test.expect(1)
+  const actual = fs.readFileSync('greeter.ts').toString()
+  const expected = fs.readFileSync('test/expected.ts').toString()
+  test.equal(actual, expected, 'should have created greeter.ts from greeter.vue.ts.')
+  console.log('Should have created greeter.ts from greeter.vue.ts.')
+  test.done()
 }

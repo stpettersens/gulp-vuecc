@@ -1,30 +1,47 @@
-var gulp = require('gulp'),
-   vuecc = require('./'),
-      fs = require('fs'),
-nodeunit = require('gulp-nodeunit-runner');
+'use strict'
 
-var out = 'greeter.ts';
+const gulp = require('gulp')
+const vuecc = require('./')
+const fs = require('fs')
+const standard = require('gulp-standard')
+const sequence = require('gulp-sequence')
+const wait = require('gulp-wait')
+const nodeunit = require('gulp-nodeunit-runner')
 
-gulp.task('clean', function() {
-	if(fs.exists(out))
-		fs.unlinkSync(out);
-});
+const out = 'greeter.ts'
 
-gulp.task('vuecc', function() {
-	gulp.src('greeter.vue.ts', {read: false})
-	.pipe(vuecc({
-		header: false,
-		verbose: false,
-		inputExt: '.vue.ts',
-		outExt: '.ts'
-	}));
-});
+gulp.task('clean', function () {
+  if (fs.existsSync(out)) {
+    fs.unlinkSync(out)
+  }
+})
 
-gulp.task('nodeunit', function() {
-	gulp.src("test/*_test.js")
-	.pipe(nodeunit());
-});
+gulp.task('standard', function () {
+  return gulp.src('*.js')
+  .pipe(standard())
+  .pipe(standard.reporter('default', {
+    breakOnError: true
+  }))
+})
 
-gulp.task('default', function() {
-	console.log('Run npm test');
-});
+gulp.task('vuecc', function () {
+  return gulp.src('greeter.vue.ts', {read: false})
+  .pipe(vuecc({
+    header: false,
+    verbose: false,
+    inputExt: '.vue.ts',
+    outExt: '.ts'
+  }))
+})
+
+gulp.task('nodeunit', function () {
+  return gulp.src('test/*_test.js')
+  .pipe(wait(1500))
+  .pipe(nodeunit())
+})
+
+gulp.task('test', sequence('clean', 'standard', 'vuecc', 'nodeunit'))
+
+gulp.task('default', function () {
+  console.log('Run npm test')
+})

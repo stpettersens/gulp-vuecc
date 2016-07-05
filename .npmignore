@@ -1,3 +1,8 @@
 node_modules/
 typings/
 .travis.yml
+.gitignore
+.npmignore
+Gulpfile.js
+greeter.vue.ts
+greeter.ts

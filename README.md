@@ -5,21 +5,16 @@
 [![npm version](https://badge.fury.io/js/gulp-vuecc.svg)](http://npmjs.com/package/gulp-vuecc)
 [![Dependency Status](https://david-dm.org/stpettersens/gulp-vuecc.png?theme=shields.io)](https://david-dm.org/stpettersens/gulp-vuecc) [![Development Dependency Status](https://david-dm.org/stpettersens/gulp-vuecc/dev-status.png?theme=shields.io)](https://david-dm.org/stpettersens/gulp-vuecc#info=devDependencies)
 
-
 ##### Install:
 
-First install [vuecc](https://github.com/stpettersens/vue-component-compiler) globally:
-
-	$ npm install -g vuecc-compiler
-
-Then:
-
-    $ npm install --save-dev gulp-vuecc
+`$ npm install --save-dev gulp-vuecc`
 
 ##### Usage:
 ```js
-var gulp = require('gulp'),
-   vuecc = require('gulp-vuecc');
+'use strict'
+
+const gulp = require('gulp')
+const vuecc = require('gulp-vuecc')
 
 gulp.task('components', function() {
 	return gulp.src('*.vue.ts', {read: false})
@@ -28,8 +23,8 @@ gulp.task('components', function() {
 		verbose: false,
 		inputExt: '.vue.ts',
 		outputExt: '.js'
-	}));
-});
+	}))
+})
 ```
 
 ##### Options:

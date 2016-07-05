@@ -1,6 +1,6 @@
 {
   "name": "gulp-vuecc",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Gulp plug-in for unoffical Vue component compiler.",
   "license": "MIT",
   "repository": "http://github.com/stpettersens/gulp-vuecc",
@@ -12,7 +12,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "gulp clean && gulp vuecc && gulp nodeunit"
+    "test": "gulp test"
   },
   "files": [
     "index.js"
@@ -26,10 +26,14 @@
   ],
   "dependencies": {
     "gulp-util": "^3.0.0",
-    "through2": "^2.0.0"
+    "through2": "^2.0.0",
+    "vuecc-compiler": "0.0.9"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-nodeunit-runner": "^0.2.2"
+    "gulp-nodeunit-runner": "^0.2.2",
+    "gulp-sequence": "^0.4.5",
+    "gulp-standard": "^7.0.1",
+    "gulp-wait": "0.0.2"
   }
 }
