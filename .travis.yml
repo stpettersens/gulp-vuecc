@@ -1,7 +1,9 @@
 #
 # Travis-CI configuration for gulp-vuecc.
 #
-sudo: false
+notifications:
+  email: false
+
 language: node_js
 node_js:
   - '6.2'
