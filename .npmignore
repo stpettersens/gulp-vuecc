@@ -1,5 +1,6 @@
 node_modules/
 typings/
+test/expected.js
 *.tgz
 .travis.yml
 .gitignore
@@ -7,3 +8,5 @@ typings/
 Gulpfile.js
 greeter.vue.ts
 greeter.ts
+greeter.js
+tsconfig.json

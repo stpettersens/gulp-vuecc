@@ -1,7 +1,7 @@
 /// <reference path="vue-instance.ts" />
 
 class GreeterController extends VueInstance {
-	
+
 	constructor() {
 		super();
 		this.el = '#greeter';

@@ -9,5 +9,9 @@ node_js:
   - '6.2'
   - '5.1'
 
+# Install typings for Vue.js type definition.
+before_install:
+  - npm install -g typings
+
 # Invoke tests for gulp.
 script: npm test

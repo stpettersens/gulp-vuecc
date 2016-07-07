@@ -2,18 +2,18 @@
 
 const gulp = require('gulp')
 const vuecc = require('./')
-const fs = require('fs')
 const standard = require('gulp-standard')
 const sequence = require('gulp-sequence')
 const wait = require('gulp-wait')
-const nodeunit = require('gulp-nodeunit-runner')
-
-const out = 'greeter.ts'
+const rename = require('gulp-rename')
+const clean = require('gulp-rimraf')
+const nodeUnit = require('gulp-nodeunit-runner')
+const _exec = require('child_process').exec
+const fs = require('fs')
 
 gulp.task('clean', function () {
-  if (fs.existsSync(out)) {
-    fs.unlinkSync(out)
-  }
+  return gulp.src(['greeter.ts', 'typings/'])
+  .pipe(clean())
 })
 
 gulp.task('standard', function () {
@@ -22,6 +22,22 @@ gulp.task('standard', function () {
   .pipe(standard.reporter('default', {
     breakOnError: true
   }))
+})
+
+gulp.task('typings', function () {
+  if (!fs.existsSync('typings/index.d.ts')) {
+    _exec('typings install', function (stderr, stdout) {
+      console.info(stdout)
+    })
+    return gulp.src('*', {read: false})
+    .pipe(wait(15000))
+  }
+})
+
+gulp.task('vue-def', function () {
+  return gulp.src('typings/globals/vue/index.d.ts')
+  .pipe(rename('vue.d.ts'))
+  .pipe(gulp.dest('typings/vue'))
 })
 
 gulp.task('vuecc', function () {
@@ -37,10 +53,10 @@ gulp.task('vuecc', function () {
 gulp.task('nodeunit', function () {
   return gulp.src('test/*_test.js')
   .pipe(wait(1500))
-  .pipe(nodeunit())
+  .pipe(nodeUnit())
 })
 
-gulp.task('test', sequence('clean', 'standard', 'vuecc', 'nodeunit'))
+gulp.task('test', sequence('clean', 'standard', 'typings', 'vue-def', 'vuecc', 'nodeunit'))
 
 gulp.task('default', function () {
   console.log('Run npm test')

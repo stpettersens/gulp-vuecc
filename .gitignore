@@ -1,4 +1,7 @@
 node_modules/
 typings/
+test/expected.js
 *.tgz
 greeter.ts
+greeter.js
+tsconfig.json
